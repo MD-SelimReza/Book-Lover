@@ -3,11 +3,11 @@ import Nav from "../components/Nav";
 
 const MainLayouts = () => {
   return (
-    <div>
-      <header className="h-16 px-6 pt-2">
+    <div className="px-3">
+      <header className="h-16 lg:px-6">
         <Nav />
       </header>
-      <main className="p-8">
+      <main className="lg:p-8">
         <Outlet />
       </main>
     </div>
