@@ -8,20 +8,20 @@
     "totalPages": 180,
     "rating": 4.5,
     "category": "Classic",
-    "tags": ["Romance", "Tragedy", "Historical"],
+    "tags": ["Romance", "Tragedy"],
     "publisher": "Scribner",
     "yearOfPublishing": 1925
   },
   {
     "bookId": 2,
-    "bookName": "1984",
-    "author": "George Orwell",
+    "bookName": "Harry Potter and the Sorcerer's",
+    "author": "J.K. Rowling",
     "image": "https://i.ibb.co/gW7R7y7/book-1.png",
     "review": "George Orwell's 1984 stands as a chilling warning against the perils of totalitarianism and the erosion of individual freedom. Set in a dystopian future where Big Brother reigns supreme, the novel follows the journey of Winston Smith, a disillusioned citizen who dares to challenge the oppressive regime. Through Winston's eyes, Orwell paints a bleak picture of a society where truth is subjective, surveillance is omnipresent, and dissent is swiftly punished.",
     "totalPages": 328,
     "rating": 4.8,
     "category": "Fiction",
-    "tags": ["Dystopian", "Political", "Social Commentary"],
+    "tags": ["Dystopian", "Political"],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949
   },
@@ -34,7 +34,7 @@
     "totalPages": 281,
     "rating": 4.7,
     "category": "Literary Fiction",
-    "tags": ["Coming of Age", "Legal Drama", "Social Issues"],
+    "tags": ["Coming of Age", "Legal Drama"],
     "publisher": "J. B. Lippincott & Co.",
     "yearOfPublishing": 1960
   },
@@ -47,7 +47,7 @@
     "totalPages": 224,
     "rating": 4.3,
     "category": "Literary Fiction",
-    "tags": ["Bildungsroman", "Rebellion", "Alienation"],
+    "tags": ["Bildungsroman", "Rebellion"],
     "publisher": "Little, Brown and Company",
     "yearOfPublishing": 1951
   },
@@ -60,7 +60,7 @@
     "totalPages": 279,
     "rating": 4.6,
     "category": "Romance",
-    "tags": ["Regency Era", "Satire", "Social Commentary"],
+    "tags": ["Regency Era", "Satire"],
     "publisher": "T. Egerton, Whitehall",
     "yearOfPublishing": 1813
   },
@@ -73,7 +73,7 @@
     "totalPages": 310,
     "rating": 4.9,
     "category": "Fantasy",
-    "tags": ["Adventure", "Quest", "Epic"],
+    "tags": ["Adventure", "Quest"],
     "publisher": "Allen & Unwin",
     "yearOfPublishing": 1937
   }
