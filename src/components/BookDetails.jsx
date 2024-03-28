@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveBook } from "../utils";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -17,12 +18,19 @@ const BookDetails = () => {
     rating,
     yearOfPublishing,
   } = book;
+  const handleReadBook = (book) => {
+    saveBook(book);
+  };
+  const handleWishlist = (book) => {
+    saveBook(book);
+  };
+
   return (
-    <section className="flex justify-center items-center gap-10">
-      <div className="flex-1 bg-gray-200">
+    <section className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mb-6 gap-10">
+      <div className="bg-gray-200 py-2 rounded-lg">
         <img src={image} alt="" className="w-40 m-auto" />
       </div>
-      <div className="flex-1">
+      <div className="">
         <div>
           <h1 className="text-4xl font-bold mb-2">{bookName}</h1>
           <p className="font-medium">By: {author}</p>
@@ -36,9 +44,14 @@ const BookDetails = () => {
             {review}
           </p>
           <p>
-            <span className="font-bold mr-2">Tags:</span>
+            <span className="font-bold mr-4">Tags:</span>
             {tags.map((tag, idx) => (
-              <span key={idx}>#{tag}</span>
+              <span
+                key={idx}
+                className="mr-10 bg-gray-100 font-medium py-1 px-3 rounded-full text-[#23BE0A]"
+              >
+                #{tag}
+              </span>
             ))}
           </p>
         </div>
@@ -58,10 +71,16 @@ const BookDetails = () => {
           </p>
         </div>
         <div className="flex gap-3 mt-3 ">
-          <button className="btn border-2 px-5 bg-transparent hover:bg-[#59C6D2] border-gray-200 hover:text-white">
+          <button
+            onClick={() => handleReadBook(book)}
+            className="btn border-2 px-5 bg-transparent hover:bg-[#59C6D2] border-gray-200 hover:text-white"
+          >
             Read
           </button>
-          <button className="btn border-2 px-5 bg-transparent hover:bg-[#59C6D2] border-gray-200 hover:text-white">
+          <button
+            onClick={() => handleWishlist(book)}
+            className="btn border-2 px-5 bg-transparent hover:bg-[#59C6D2] border-gray-200 hover:text-white"
+          >
             Wishlist
           </button>
         </div>

@@ -1,8 +1,11 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import Hero from "../components/Hero";
 import SingleBook from "../components/SingleBook";
+import Loader from "../components/Loader";
 const Home = () => {
   const books = useLoaderData();
+  const navigation = useNavigation();
+  if (navigation.state === "loading") return <Loader />;
   return (
     <div>
       <div>
