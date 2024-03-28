@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { getBooks } from "../utils";
+import { getBooks, getWish } from "../utils";
 import NoDataAvailable from "./NoDataAvailable";
 import WishBook from "./WishBook";
 
 const Wishlist = () => {
   const [books, setBooks] = useState([]);
+  const [wish, setWish] = useState([]);
   useEffect(() => {
     const storedBooks = getBooks();
     setBooks(storedBooks);
+    const storedWish = getWish();
+    setWish(storedWish);
   }, []);
 
   if (books.length < 1) {
@@ -24,7 +27,7 @@ const Wishlist = () => {
     <section className="">
       <div className="container max-w-6xl py-6 mx-auto space-y-6 sm:space-y-12">
         <div className="flex flex-col gap-8">
-          {books.map((book) => (
+          {wish.map((book) => (
             <WishBook key={book.bookId} book={book} />
           ))}
         </div>

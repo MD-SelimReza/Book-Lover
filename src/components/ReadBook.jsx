@@ -16,6 +16,7 @@ const ReadBook = ({ book }) => {
     yearOfPublishing,
     rating,
   } = book;
+
   return (
     <div className="flex relative">
       <div className="w-full group border-2 border-gray-300 p-4 hover:no-underline focus:no-underline lg:flex justify-center items-center rounded-lg gap-10">

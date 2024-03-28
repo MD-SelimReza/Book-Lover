@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBook, storeBook } from "../utils";
+import { saveBook, saveWish } from "../utils";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -23,7 +23,7 @@ const BookDetails = () => {
     saveBook(book);
   };
   const handleWishlist = (book) => {
-    storeBook(book);
+    saveWish(book);
   };
 
   return (

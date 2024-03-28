@@ -1,7 +1,7 @@
 const ReadBook = () => {
   return (
     <div>
-      <h1>Read book page</h1>
+      <h1>Read Book chart</h1>
     </div>
   );
 };

@@ -6,8 +6,8 @@ import ReadBook from "./ReadBook";
 const ReadList = () => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    const storedBlogs = getBooks();
-    setBooks(storedBlogs);
+    const storedBooks = getBooks();
+    setBooks(storedBooks);
   }, []);
 
   if (books.length < 1) {

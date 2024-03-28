@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
+import { saveBook } from "../utils";
 
 const ListBook = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  const { bookId } = useParams();
+
+  const sortedFun = () => {
+    saveBook(bookId);
+  };
 
   return (
     <div className="lg:max-w-3xl py-12 mx-auto space-y-12">
@@ -19,7 +25,7 @@ const ListBook = () => {
               </summary>
               <ul className="p-2 shadow menu dropdown-content z-[1] bg-gray-200  w-44">
                 <li>
-                  <a>Rating</a>
+                  <a onClick={sortedFun}>Rating</a>
                 </li>
                 <li>
                   <a>Number of pages</a>
