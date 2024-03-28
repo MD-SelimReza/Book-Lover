@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 
 const MainLayouts = () => {
   return (
-    <div className="px-3">
+    <div className="px-3 max-w-[1140px] mx-auto">
       <header className="h-16 lg:px-6">
         <Nav />
       </header>

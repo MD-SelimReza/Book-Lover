@@ -10,7 +10,7 @@ export const getBooks = () => {
 }
 export const saveBook = book => {
     let books = getBooks()
-    const isExist = books.find(b => b.bookId === book.bookId)
+    const isExist = books.find(b => b.bookId === parseInt(book.bookId))
     if (isExist) {
         return toast.error('Already Bookmarked!')
     }
@@ -19,6 +19,15 @@ export const saveBook = book => {
     toast.success('Book Bookmarked Successfully!')
 }
 
-// export const sorting = (sortByData) => {
+export const storeBook = book => {
+    let books = getBooks()
+    const isExist = books.find(b => b.bookId === parseInt(book.bookId))
+    if (isExist) {
+        return toast.error('Already Bookmarked!')
+    }
+    books.push(book)
+    localStorage.setItem('books', JSON.stringify(books))
+    toast.success('Book Bookmarked Successfully!')
+}
 
-// }
+

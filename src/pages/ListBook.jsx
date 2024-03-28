@@ -6,7 +6,7 @@ const ListBook = () => {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
-    <div className="max-w-3xl px-6 py-12 mx-auto space-y-12">
+    <div className="lg:max-w-3xl py-12 mx-auto space-y-12">
       <article className="space-y-8">
         <div className="space-y-6">
           <h1 className="text-2xl font-bold md:tracking-tight text-center bg-gray-200 rounded-lg py-6 md:text-3xl">

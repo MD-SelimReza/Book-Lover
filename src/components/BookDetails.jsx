@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBook } from "../utils";
+import { saveBook, storeBook } from "../utils";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -18,17 +18,18 @@ const BookDetails = () => {
     rating,
     yearOfPublishing,
   } = book;
+
   const handleReadBook = (book) => {
     saveBook(book);
   };
   const handleWishlist = (book) => {
-    saveBook(book);
+    storeBook(book);
   };
 
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mb-6 gap-10">
-      <div className="bg-gray-200 py-2 rounded-lg">
-        <img src={image} alt="" className="w-40 m-auto" />
+      <div className="bg-gray-200 size-full flex justify-center items-center rounded-lg">
+        <img src={image} alt="" className="w-72" />
       </div>
       <div className="">
         <div>

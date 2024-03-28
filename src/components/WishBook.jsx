@@ -18,18 +18,20 @@ const WishBook = ({ book }) => {
   } = book;
   return (
     <div className="flex relative">
-      <div className="w-full group border-2 border-gray-300 p-4 hover:no-underline focus:no-underline flex items-center rounded-lg gap-10">
-        <img
-          role="presentation"
-          className="object-cover w-[150px] p-5 bg-gray-200 rounded-lg"
-          src={image || placeHolderImage}
-        />
+      <div className="w-full group border-2 border-gray-300 p-4 hover:no-underline focus:no-underline lg:flex justify-center items-center rounded-lg gap-10">
+        <div className="p-5 bg-gray-200 rounded-lg mb-10 lg:mb-0">
+          <img
+            role="presentation"
+            className="object-cover w-[150px] mx-auto"
+            src={image || placeHolderImage}
+          />
+        </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
             {bookName}
           </h3>
           <p>By: {author}</p>
-          <div className="flex">
+          <div className="flex flex-wrap gap-4">
             <p>
               <span className="font-bold mr-2">Tags:</span>
               {tags.map((tag, idx) => (
@@ -46,7 +48,7 @@ const WishBook = ({ book }) => {
               {yearOfPublishing}
             </p>
           </div>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-4">
             <p className="flex items-start gap-2">
               <HiOutlineUsers className="size-6" /> Publisher: {publisher}
             </p>
@@ -55,8 +57,8 @@ const WishBook = ({ book }) => {
               {totalPages}
             </p>
           </div>
-          <hr className="my-6" />
-          <div className="flex gap-4 items-center">
+          <hr className="" />
+          <div className="flex gap-4 justify-center lg:justify-start flex-wrap items-center">
             <p className="text-[#328EFF] px-3 py-1 rounded-full bg-[#328EFF26]">
               Category: {category}
             </p>
