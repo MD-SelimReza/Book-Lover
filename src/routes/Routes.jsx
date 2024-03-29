@@ -6,11 +6,20 @@ import ReadBook from "../pages/ReadBook";
 import BookDetails from "../components/BookDetails";
 import ReadList from "../components/ReadList";
 import Wishlist from "../components/Wishlist";
+import DetailsBook from "../pages/DetailsBook";
+import ErrorState from "../components/ErrorState";
+import BookStore from "../pages/BookStore";
+import AllBook from "../components/AllBook";
+import Fiction from "../components/Fiction";
+import Fantasy from "../components/Fantasy";
+import Romance from "../components/Romance";
+import Literary from "../components/Literary";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
+    errorElement: <ErrorState />,
     children: [
       {
         path: "/",
@@ -40,6 +49,38 @@ export const router = createBrowserRouter([
       {
         path: "/readBooks",
         element: <ReadBook />,
+      },
+      {
+        path: "/bookDetails",
+        element: <DetailsBook />,
+        loader: () => fetch("/book.json"),
+      },
+      {
+        path: "/bookStore",
+        element: <BookStore />,
+        loader: () => fetch("/book.json"),
+        children: [
+          {
+            index: true,
+            element: <AllBook />,
+          },
+          {
+            path: "literary",
+            element: <Literary />,
+          },
+          {
+            path: "fiction",
+            element: <Fiction />,
+          },
+          {
+            path: "fantasy",
+            element: <Fantasy />,
+          },
+          {
+            path: "romance",
+            element: <Romance />,
+          },
+        ],
       },
     ],
   },

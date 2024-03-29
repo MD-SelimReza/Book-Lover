@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
-import { saveBook } from "../utils";
 
 const ListBook = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const { bookId } = useParams();
 
-  const sortedFun = () => {
-    saveBook(bookId);
-  };
+  const sortedFun = () => {};
 
   return (
     <div className="lg:max-w-3xl py-12 mx-auto space-y-12">

@@ -55,6 +55,26 @@ const Nav = () => {
             >
               Pages to Read
             </NavLink>
+            <NavLink
+              to="/bookDetails"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#23BE0A] p-1 rounded-md font-medium border border-[#23BE0A] hover:text-white hover:bg-[#23BE0A]"
+                  : "font-medium p-1 rounded-md"
+              }
+            >
+              Book Details
+            </NavLink>
+            <NavLink
+              to="/bookStore"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#23BE0A] p-1 rounded-md font-medium border border-[#23BE0A] hover:text-white hover:bg-[#23BE0A]"
+                  : "font-medium p-1 rounded-md"
+              }
+            >
+              Stored book
+            </NavLink>
           </ul>
         </div>
         <Link className="text-xl flex lg:text-3xl gap-0 normal-case font-bold text-[#23BE0A]">
@@ -62,7 +82,7 @@ const Nav = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal flex gap-6 items-center">
+        <ul className="menu menu-horizontal flex gap-4 items-center">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -92,6 +112,26 @@ const Nav = () => {
             }
           >
             Pages to Read
+          </NavLink>
+          <NavLink
+            to="/bookDetails"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-medium border border-[#23BE0A] hover:text-white hover:bg-[#23BE0A] px-3 py-1 rounded-md"
+                : "font-medium"
+            }
+          >
+            Book Details
+          </NavLink>
+          <NavLink
+            to="/bookStore"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#23BE0A] font-medium border border-[#23BE0A] hover:text-white hover:bg-[#23BE0A] px-3 py-1 rounded-md"
+                : "font-medium"
+            }
+          >
+            Stored book
           </NavLink>
         </ul>
       </div>

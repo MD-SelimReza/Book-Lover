@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineUsers } from "react-icons/hi2";
 import { HiOutlineDocumentChartBar } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const ReadBook = ({ book }) => {
   const {
@@ -66,9 +67,12 @@ const ReadBook = ({ book }) => {
             <p className="text-[#FFAC33] px-3 py-1 rounded-full bg-[#FFAC3326]">
               Rating: {rating}
             </p>
-            <button className="bg-[#23BE0A] text-white px-3 py-1 rounded-full">
+            <Link
+              to="/bookDetails"
+              className="bg-[#23BE0A] text-white px-3 py-1 rounded-full"
+            >
               View Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>
