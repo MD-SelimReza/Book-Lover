@@ -19,6 +19,24 @@ export const saveBook = book => {
     toast.success('Book successfully added the read list!')
 }
 
+export const getRatings = () => {
+    let ratings = []
+    const storedRatings = localStorage.getItem('ratings')
+    if (storedRatings) {
+        ratings = JSON.parse(storedRatings)
+    }
+    return ratings
+}
+export const saveRating = rating => {
+    let ratings = getBooks()
+    const isExist = ratings.find(r => r === parseInt(rating))
+    if (isExist) {
+        return ratings;
+    }
+    ratings.push(rating)
+    localStorage.setItem('ratings', JSON.stringify(ratings))
+}
+
 
 export const getWish = () => {
     let books = []

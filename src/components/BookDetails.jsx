@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBook, saveWish } from "../utils";
+import { saveBook, saveRating, saveWish } from "../utils";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -19,8 +19,9 @@ const BookDetails = () => {
     yearOfPublishing,
   } = book;
 
-  const handleReadBook = (book) => {
+  const handleReadBook = (book, rating) => {
     saveBook(book);
+    saveRating(rating);
   };
   const handleWishlist = (book) => {
     saveWish(book);
@@ -73,7 +74,7 @@ const BookDetails = () => {
         </div>
         <div className="flex gap-3 mt-3 ">
           <button
-            onClick={() => handleReadBook(book)}
+            onClick={() => handleReadBook(book, { rating })}
             className="btn border-2 px-5 bg-transparent hover:bg-[#59C6D2] border-gray-200 hover:text-white"
           >
             Read
