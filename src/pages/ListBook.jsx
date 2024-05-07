@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
-import { saveRating } from "../utils";
+import { getBooks } from "../utils";
 
 const ListBook = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [rating, setRating] = useState([]);
+  const getBook = getBooks();
+  console.log(getBook);
 
-  const sortedFun = () => {
-    const storedRating = saveRating();
-    const allRatings = [...storedRating, rating];
-    setRating(allRatings);
+  const sortedFun = (sortByData) => {
+    if (sortByData) {
+      getBook.sort((a, b) => {
+        return a.sortByData - b.sortByData;
+      });
+    }
   };
-
-  console.log(rating);
 
   return (
     <div className="lg:max-w-3xl py-12 mx-auto space-y-12">
@@ -28,8 +29,8 @@ const ListBook = () => {
                 Sort By <IoIosArrowDown className="size-6" />
               </summary>
               <ul className="p-2 shadow menu dropdown-content z-[1] bg-gray-200  w-44">
-                <li>
-                  <a onClick={sortedFun}>Rating</a>
+                <li onClick={() => sortedFun("rating")}>
+                  <a>Rating</a>
                 </li>
                 <li>
                   <a>Number of pages</a>

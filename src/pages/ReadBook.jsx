@@ -36,7 +36,7 @@ const ReadBook = () => {
     setBooks(getBook);
   }, []);
   return (
-    <div className="flex justify-center rounded-lg bg-gray-300 p-8 flex-col items-center min-h-[calc(100vh-200px)]">
+    <div className="flex justify-center rounded-lg overflow-x-scroll bg-gray-300 p-8 flex-col items-center min-h-[calc(100vh-200px)]">
       {/* <ResponsiveContainer> */}
       <BarChart
         width={900}
